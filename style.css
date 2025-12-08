@@ -1,62 +1,89 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #f4f4f4;
 }
 
 header {
-  background-color: #007BFF;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
 }
 
-header nav ul {
-  list-style: none;
+nav {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #e9ecef;
-}
-
-.blog-previews {
-  max-width: 900px;
-  margin: 20px auto;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-.blog-previews article {
-  margin-bottom: 30px;
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.blog-previews article h2 a {
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
   text-decoration: none;
-  color: #007BFF;
+}
+
+nav ul li a.active {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 footer {
-  background-color: #333;
-  color: white;
   text-align: center;
   padding: 15px 0;
-  margin-top: 30px;
+  background-color: #333;
+  color: #fff;
 }
