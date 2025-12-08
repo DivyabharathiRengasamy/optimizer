@@ -9,12 +9,27 @@
 
 <url>
   <loc>https://optimizer-eta.vercel.app/</loc>
-  <lastmod>2025-12-08T05:22:10+00:00</lastmod>
+  <lastmod>2025-12-08T05:42:49+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://optimizer-eta.vercel.app/index.html</loc>
-  <lastmod>2025-12-08T05:22:11+00:00</lastmod>
+  <lastmod>2025-12-08T05:42:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://optimizer-eta.vercel.app/about.html</loc>
+  <lastmod>2025-12-08T05:42:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://optimizer-eta.vercel.app/contact.html</loc>
+  <lastmod>2025-12-08T05:42:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://optimizer-eta.vercel.app/blog.html</loc>
+  <lastmod>2025-12-08T05:42:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
