@@ -1,43 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | My SEO Website</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs – Optimizer</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+        body {background:#ffffff; color:#222;}
+
+        /* HEADER */
+        header {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #efefef;
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+        .logo { font-size:26px; font-weight:700; color:#ff4d4d; }
+        nav a { margin:0 18px; text-decoration:none; color:#333; font-size:16px; transition:0.3s;}
+        nav a:hover { color:#ff4d4d;}
+        .cta-btn { background:#ff4d4d; color:white; padding:10px 20px; border-radius:6px; text-decoration:none; font-size:15px;}
+
+        /* HERO */
+        .hero { text-align:center; padding:90px 40px;}
+        .hero h1 { font-size:42px; margin-bottom:16px; color:#222;}
+        .hero p { font-size:18px; color:#666; margin-bottom:26px;}
+
+        /* BLOG GRID */
+        .blog-section { padding:70px 40px; text-align:center; }
+        .blog-section h2 { font-size:32px; margin-bottom:45px; color:#222;}
+        .blog-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
+        .blog-box { width:300px; background:#fff; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); overflow:hidden;}
+        .blog-box img { width:100%; height:180px; object-fit:cover;}
+        .blog-box .content { padding:20px; text-align:left; }
+        .blog-box h3 { font-size:20px; color:#ff4d4d; margin-bottom:10px;}
+        .blog-box p { font-size:16px; line-height:1.6; }
+
+        /* BLOG AUTHOR */
+        .blog-box .blog-author {
+            font-size: 14px;
+            color: #666;
+            margin-top: 12px;
+            font-style: italic;
+        }
+        .blog-box .blog-author span,
+        .blog-box .blog-author time {
+            margin-right: 5px;
+        }
+
+        /* READ MORE BUTTON */
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 18px;
+            background: #ff4d4d;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .read-more:hover {
+            background: #e04444;
+        }
+
+        footer { text-align:center; padding:22px; background:#ffffff; border-top:1px solid #efefef; margin-top:60px;}
+    </style>
 </head>
 <body>
-  <header>
+
+<header>
+    <div class="logo">Optimizer</div>
     <nav>
-      <div class="logo">MySEO</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html" class="active">Blogs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
-  </header>
+    <a href="contact.html" class="cta-btn">Get Quote</a>
+</header>
 
-  <main>
-    <section class="blog">
-      <h1>Our Blog</h1>
-      <article>
-        <h2>SEO Tips for Beginners</h2>
-        <p>Learn how to optimize your website for search engines and increase traffic...</p>
-        <a href="#">Read More</a>
-      </article>
+<section class="hero">
+    <h1>Our Latest Insights</h1>
+    <p>Read our blogs about digital marketing, SEO, social media strategies, and industry trends.</p>
+</section>
 
-      <article>
-        <h2>HTML & CSS Best Practices</h2>
-        <p>Clean, semantic code is essential for both SEO and user experience...</p>
-        <a href="#">Read More</a>
-      </article>
-    </section>
-  </main>
+<section class="blog-section">
+    <h2>Recent Articles</h2>
+    <div class="blog-container">
+        <div class="blog-box">
+            <img src="images/AI SEO.png" alt="Blog 1">
+            <div class="content">
+                <h3>Top SEO Strategies for 2025</h3>
+                <p>Learn the latest AI-driven SEO techniques to boost your website rankings and organic traffic.</p>
+                <div class="blog-author">
+                    <span>Author: Divyabharathi</span> | 
+                    <time datetime="2025-07-04">December 09, 2025</time>
+                </div>
+                <a href="ai seoBlog.html" class="read-more">Read More</a>
+            </div>
+        </div>
 
-  <footer>
-    <p>&copy; 2025 My SEO Website</p>
-  </footer>
+        <div class="blog-box">
+            <img src="images/blog2.jpg" alt="Blog 2">
+            <div class="content">
+                <h3>Social Media Marketing Trends</h3>
+                <p>Discover emerging social media tactics that increase engagement and build your brand authority.</p>
+                <div class="blog-author">
+                    <span>Author: Tushar Pol</span> | 
+                    <span>Contributor: Christine Skopec</span> | 
+                    <time datetime="2025-08-10">August 10, 2025</time>
+                </div>
+                <a href="blog-details.html" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="blog-box">
+            <img src="images/blog3.jpg" alt="Blog 3">
+            <div class="content">
+                <h3>Content Marketing That Converts</h3>
+                <p>Create impactful content strategies that generate leads and improve customer retention.</p>
+                <div class="blog-author">
+                    <span>Author: Cecilia Meis</span> | 
+                    <span>Contributor: Christine Skopec</span> | 
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+                <a href="blog-details.html" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Optimizer – Digital Marketing Agency. All Rights Reserved.
+</footer>
+
 </body>
 </html>
