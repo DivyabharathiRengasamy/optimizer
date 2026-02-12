@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWFinder - SEO Tools</title>
+<style>
+  /* RESET & BASE */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+  body { background:#f5f6fa; color:#333; }
+
+  /* HEADER */
+  header {
+    width:100%;
+    background:#fff;
+    border-bottom:1px solid #efefef;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+  }
+  .logo { font-size:28px; font-weight:bold; color:#ff4d4d; text-decoration:none; }
+  nav { display:flex; align-items:center; gap:20px; }
+  nav a { text-decoration:none; color:#333; font-size:16px; transition:0.3s; }
+  nav a:hover { color:#ff4d4d; }
+
+  /* DROPDOWN */
+  .dropdown { position:relative; }
+  .dropdown-content {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    border:1px solid #efefef;
+    border-radius:6px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    flex-direction:column;
+  }
+  .dropdown-content a {
+    padding:10px 15px;
+    display:block;
+    color:#333;
+    text-decoration:none;
+  }
+  .dropdown-content a:hover { background:#ff4d4d; color:#fff; }
+  .dropdown:hover .dropdown-content { display:flex; }
+
+  .cta-btn {
+    background:#ff4d4d;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:15px;
+  }
+
+  /* HERO */
+  .hero {
+    text-align:center;
+    padding:80px 20px;
+    background:#fefefe;
+  }
+  .hero h1 { font-size:42px; margin-bottom:20px; }
+  .hero p { font-size:18px; margin-bottom:25px; color:#555; }
+  .hero .cta-main { background:#ff4d4d; color:#fff; padding:14px 32px; font-size:18px; border-radius:8px; text-decoration:none; }
+
+  /* FEATURES */
+  .features {
+    padding:60px 20px;
+    text-align:center;
+  }
+  .features h2 { font-size:32px; margin-bottom:40px; }
+  .feature-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+  }
+  .feature-box {
+    background:#fff;
+    padding:25px;
+    width:280px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  }
+  .feature-box h3 { color:#ff4d4d; margin-bottom:10px; }
+  .feature-box p { font-size:16px; line-height:1.6; }
+
+    /* Features */
+.features h2,
+.testimonials h2,
+.pricing h2,
+.newsletter h2 { text-align:center; font-size:32px; margin-bottom:45px; }
+.feature-container, 
+.testimonial-container, 
+.pricing-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.feature-box,
+.testimonial-box,
+.pricing-box { background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); width:300px; }
+.feature-box h3,
+.pricing-box h3 { color:#ff4d4d; margin-bottom:12px; }
+.testimonial-box p, 
+.feature-box p,
+.pricing-box p { font-size:16px; }
+
+
+  /* Newsletter */
+  .newsletter input[type=email] { padding:14px; width:300px; max-width:90%; border-radius:6px; border:1px solid #ccc; margin-right:10px; }
+  .newsletter button { padding:14px 28px; background:#ff4d4d; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+
+  /* FOOTER */
+  footer {
+    text-align:center;
+    padding:25px;
+    background:#fff;
+    border-top:1px solid #efefef;
+    margin-top:40px;
+    font-size:14px;
+  }
+  footer a { color:#333; text-decoration:none; margin:0 8px; }
+  footer a:hover { color:#ff4d4d; }
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    nav { flex-direction:column; gap:10px; }
+    .feature-container { flex-direction:column; align-items:center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/public/index.html" class="logo">Optimizer</a>
+  <nav>
+    <div class="dropdown">
+      <a href="#">SEO Tools</a>
+      <div class="dropdown-content">
+        <a href="schema-markup-generator.html">Schema Markup Gnerator</a>
+        <a href="sitemap-generator.html">Site map Generator</a>
+        <a href="#">SERPChecker</a>
+        <a href="#">SERPWatcher</a>
+        <a href="#">SiteProfiler</a>
+        <a href="#">AI Search Watcher</a>
+        <a href="#">SERP Simulator</a>
+        <a href="#">Reddit Threads Finder</a>
+        <a href="#">SEO Content Optimizer</a>
+        <a href="#">Share of Search</a>
+      </div>
+    </div>
+    
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="/public/contact.html">Contact</a>
+  </nav>
+  <a href="/public/contact.html" class="cta-btn">Get Quote</a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <h1>Find Keywords That You Can Easily Rank For</h1>
+  <p>Exact search volumes, Keyword difficulty, Backlink data, and more — all in one place.</p>
+  <a href="#features" class="cta-main">Explore Features</a>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <h2>Our Core Tools</h2>
+  <div class="feature-container">
+
+    <div class="feature-box">
+      <h3>KWFinder</h3>
+      <p>Exact search volumes, Keyword difficulty, and tons of keyword ideas for your website.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>LinkMiner</h3>
+      <p>Backlink opportunities for your website projects with detailed analysis.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>SERPChecker</h3>
+      <p>Localized SERP results including SERP features and 49 SEO metrics.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>SERPWatcher</h3>
+      <p>Rank tracking with daily updates and city-level localization.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>SiteProfiler</h3>
+      <p>Crucial SEO metrics overview of any website for data-driven decisions.</p>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="testimonials">
+  <h2>What Experts Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial-box">
+      <p>"Optimizer has lots of features other tools have, but unlike most, it's VERY intuitive." – Brian Dean</p>
+    </div>
+    <div class="testimonial-box">
+      <p>"Optimizer is super-effective for finding easy-to-rank keywords." – Matt Diggity</p>
+    </div>
+    <div class="testimonial-box">
+      <p>"Using Optimizer is amazing! Identify seasonal keywords and hot topics to boost traffic." – Julia McCoy</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Pricing Plans</h2>
+  <div class="pricing-container">
+    <div class="pricing-box">
+      <h3>Basic</h3>
+      <p>$18.85/mo</p>
+      <p>Keyword research: 100 req/24h</p>
+      <p>SERP analysis: 100 req/24h</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Premium</h3>
+      <p>$26.35/mo</p>
+      <p>Keyword research: 500 req/24h</p>
+      <p>SERP analysis: 500 req/24h</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Agency</h3>
+      <p>$48.85/mo</p>
+      <p>Keyword research: 1.2k req/24h</p>
+      <p>SERP analysis: 1.2k req/24h</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="newsletter" id="newsletter">
+  <h2>Subscribe to Our Newsletter</h2>
+  <input type="email" placeholder="Enter your email">
+  <button>Subscribe</button>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <p>© 2025 Optimizer. All Rights Reserved.</p>
+  <p>
+    <a href="#">Privacy</a> |
+    <a href="#">Terms</a>
+  </p>
+</footer>
+
+</body>
+</html>

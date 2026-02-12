@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Schema Markup Generator | Optimizer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Generate Google-friendly Schema Markup JSON-LD for SEO">
+
+<style>
+body {
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f6fa;
+}
+
+/* HEADER */  header {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #efefef;
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ff4d4d; /* Zoho like red color */
+        }
+
+        nav a {
+            margin: 0 18px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .cta-btn {
+            background: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+/* TOOL */
+.tool-section { 
+    padding:50px 20px; 
+}
+.tool-box {
+  max-width:950px;
+  margin:auto;
+  background:#fff;
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+.tool-box h1 { text-align:center; margin-bottom:10px; }
+.tool-box p { text-align:center; color:#555; }
+input, textarea, select { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #ccc; font-size:15px; }
+.schema-block { display:none; margin-top:25px; }
+button { margin-top:20px; padding:14px 30px; border:none; border-radius:8px; background:#ff4d4d; color:#fff; font-weight:bold; cursor:pointer; }
+button:hover { opacity:.9; }
+
+.preview { margin-top:30px; background:#f9f9f9; padding:20px; border-radius:8px; }
+.output { width:100%; height:280px; margin-top:20px; font-family:monospace; }
+.note { color:#c0392b; margin-top:10px; font-size:14px; }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 22px;
+  background: #ffffff;
+  border-top: 1px solid #efefef;
+  margin-top: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+ <header>
+        <div class="logo">Optimizer</div>
+        <nav>
+            <a href="/public/index.html">Home</a>
+            <a href="/public/services.html">Services</a>
+            <a href="blog.html">Blogs</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="/tools/sitemap-generator.html">Tools</a>
+
+        </nav>
+        <a href="#enquiry" class="cta-btn">Get Quote</a>
+    </header>
+
+
+<!-- TOOL -->
+<section class="tool-section">
+<div class="tool-box">
+<h1>Schema Markup Generator</h1>
+<p>Create JSON-LD schema for better SEO</p>
+
+<select id="schemaType" onchange="showSchema()">
+  <option value="">Select Schema Type</option>
+  <option value="faq">FAQ Page</option>
+  <option value="article">Article</option>
+  <option value="product">Product</option>
+  <option value="job">Job Posting</option>
+  <option value="local">Local Business</option>
+  <option value="person">Person</option>
+  <option value="event">Event</option>
+  <option value="howto">HowTo</option>
+  <option value="recipe">Recipe</option>
+  <option value="video">Video</option>
+  <option value="website">Website</option>
+</select>
+
+<!-- Schema Inputs -->
+<div id="faq" class="schema-block">
+  <h3>FAQ Schema</h3>
+  <input id="faqQ" placeholder="Question">
+  <textarea id="faqA" placeholder="Answer"></textarea>
+</div>
+
+<div id="article" class="schema-block">
+  <h3>Article</h3>
+  <input id="articleTitle" placeholder="Headline">
+  <input id="articleAuthor" placeholder="Author">
+  <input id="articleUrl" placeholder="Page URL">
+  <textarea id="articleDesc" placeholder="Description"></textarea>
+</div>
+
+<div id="product" class="schema-block">
+  <h3>Product</h3>
+  <input id="productName" placeholder="Product Name">
+  <input id="productPrice" placeholder="Price">
+  <input id="productCurrency" placeholder="Currency (INR)">
+</div>
+
+<div id="job" class="schema-block">
+  <h3>Job Posting</h3>
+  <input id="jobTitle" placeholder="Job Title">
+  <input id="jobCompany" placeholder="Company">
+  <input id="jobLocation" placeholder="Location">
+</div>
+
+<div id="local" class="schema-block">
+  <h3>Local Business</h3>
+  <input id="businessName" placeholder="Business Name">
+  <input id="businessAddress" placeholder="Address">
+  <input id="businessPhone" placeholder="Phone">
+</div>
+
+<div id="person" class="schema-block">
+  <h3>Person</h3>
+  <input id="personName" placeholder="Name">
+  <input id="personJob" placeholder="Job Title">
+  <input id="personUrl" placeholder="Profile URL">
+</div>
+
+<div id="event" class="schema-block">
+  <h3>Event</h3>
+  <input id="eventName" placeholder="Event Name">
+  <input id="eventDate" placeholder="Start Date">
+  <input id="eventLocation" placeholder="Location">
+</div>
+
+<div id="howto" class="schema-block">
+  <h3>HowTo</h3>
+  <input id="howtoName" placeholder="HowTo Name">
+  <textarea id="howtoSteps" placeholder="Steps (comma separated)"></textarea>
+</div>
+
+<div id="recipe" class="schema-block">
+  <h3>Recipe</h3>
+  <input id="recipeName" placeholder="Recipe Name">
+  <textarea id="recipeIngredients" placeholder="Ingredients (comma separated)"></textarea>
+</div>
+
+<div id="video" class="schema-block">
+  <h3>Video</h3>
+  <input id="videoTitle" placeholder="Video Title">
+  <input id="videoUrl" placeholder="Video URL">
+</div>
+
+<div id="website" class="schema-block">
+  <h3>Website</h3>
+  <input id="websiteName" placeholder="Website Name">
+  <input id="websiteUrl" placeholder="Website URL">
+</div>
+
+<button onclick="generateSchema()">Generate Schema</button>
+<div class="note">⚠ All content must be visible on the page to be eligible for rich results.</div>
+<div id="preview" class="preview" style="display:none"></div>
+<textarea id="output" class="output" readonly></textarea>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Optimizer. All Rights Reserved.</p>
+  <p>
+    <a href="/privacy.html">Privacy</a> |
+    <a href="/terms.html">Terms</a>
+  </p>
+</footer>
+
+<script>
+function showSchema(){
+  document.querySelectorAll('.schema-block').forEach(e=>e.style.display='none');
+  let type=document.getElementById("schemaType").value;
+  if(type) document.getElementById(type).style.display='block';
+}
+
+function generateSchema(){
+  const type=document.getElementById("schemaType").value;
+  if(!type) return alert("Select a schema type");
+
+  let schema={"@context":"https://schema.org"};
+  let preview="";
+
+  switch(type){
+    case "faq":
+      schema["@type"]="FAQPage";
+      schema.mainEntity=[{
+        "@type":"Question",
+        "name":document.getElementById("faqQ").value,
+        "acceptedAnswer":{"@type":"Answer","text":document.getElementById("faqA").value}
+      }];
+      preview=`<h3>${document.getElementById("faqQ").value}</h3><p>${document.getElementById("faqA").value}</p>`;
+      break;
+    case "article":
+      schema["@type"]="Article";
+      schema.headline=document.getElementById("articleTitle").value;
+      schema.author=document.getElementById("articleAuthor").value;
+      schema.mainEntityOfPage=document.getElementById("articleUrl").value;
+      schema.description=document.getElementById("articleDesc").value;
+      preview=`<h3>${schema.headline}</h3><p>${schema.description}</p>`;
+      break;
+    case "product":
+      schema["@type"]="Product";
+      schema.name=document.getElementById("productName").value;
+      schema.offers={"@type":"Offer","price":document.getElementById("productPrice").value,"priceCurrency":document.getElementById("productCurrency").value};
+      preview=`<h3>${schema.name}</h3><p>Price: ${schema.offers.price} ${schema.offers.priceCurrency}</p>`;
+      break;
+    case "job":
+      schema["@type"]="JobPosting";
+      schema.title=document.getElementById("jobTitle").value;
+      schema.hiringOrganization=document.getElementById("jobCompany").value;
+      schema.jobLocation={"@type":"Place","address":document.getElementById("jobLocation").value};
+      preview=`<h3>${schema.title}</h3><p>${schema.hiringOrganization} - ${document.getElementById("jobLocation").value}</p>`;
+      break;
+    case "local":
+      schema["@type"]="LocalBusiness";
+      schema.name=document.getElementById("businessName").value;
+      schema.address=document.getElementById("businessAddress").value;
+      schema.telephone=document.getElementById("businessPhone").value;
+      preview=`<h3>${schema.name}</h3><p>${schema.address} | ${schema.telephone}</p>`;
+      break;
+    case "person":
+      schema["@type"]="Person";
+      schema.name=document.getElementById("personName").value;
+      schema.jobTitle=document.getElementById("personJob").value;
+      schema.url=document.getElementById("personUrl").value;
+      preview=`<h3>${schema.name}</h3><p>${schema.jobTitle}</p>`;
+      break;
+    case "event":
+      schema["@type"]="Event";
+      schema.name=document.getElementById("eventName").value;
+      schema.startDate=document.getElementById("eventDate").value;
+      schema.location=document.getElementById("eventLocation").value;
+      preview=`<h3>${schema.name}</h3><p>${schema.startDate} | ${schema.location}</p>`;
+      break;
+    case "howto":
+      schema["@type"]="HowTo";
+      schema.name=document.getElementById("howtoName").value;
+      let steps=document.getElementById("howtoSteps").value.split(",");
+      schema.step=steps.map(s=>({"@type":"HowToStep","text":s.trim()}));
+      preview=`<h3>${schema.name}</h3><ol>${steps.map(s=>`<li>${s.trim()}</li>`).join('')}</ol>`;
+      break;
+    case "recipe":
+      schema["@type"]="Recipe";
+      schema.name=document.getElementById("recipeName").value;
+      let ingredients=document.getElementById("recipeIngredients").value.split(",");
+      schema.recipeIngredient=ingredients.map(i=>i.trim());
+      preview=`<h3>${schema.name}</h3><ul>${ingredients.map(i=>`<li>${i.trim()}</li>`).join('')}</ul>`;
+      break;
+    case "video":
+      schema["@type"]="VideoObject";
+      schema.name=document.getElementById("videoTitle").value;
+      schema.contentUrl=document.getElementById("videoUrl").value;
+      preview=`<h3>${schema.name}</h3><a href="${schema.contentUrl}" target="_blank">${schema.contentUrl}</a>`;
+      break;
+    case "website":
+      schema["@type"]="WebSite";
+      schema.name=document.getElementById("websiteName").value;
+      schema.url=document.getElementById("websiteUrl").value;
+      preview=`<h3>${schema.name}</h3><p>${schema.url}</p>`;
+      break;
+  }
+
+  document.getElementById("output").value=JSON.stringify(schema,null,2);
+  document.getElementById("preview").innerHTML=preview;
+  document.getElementById("preview").style.display="block";
+}
+</script>
+
+</body>
+</html>
